@@ -2,9 +2,9 @@
 using Microsoft.Extensions.Configuration;
 using System.Linq;
 using System.Threading.Tasks;
-using Uno.Framework.Database;
+using Uno.AspNetCore.Framework.Database;
 
-namespace Uno.Framework
+namespace Uno.AspNetCore.Framework
 {
     public static class ContextSeed
 	{

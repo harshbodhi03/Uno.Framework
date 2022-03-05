@@ -1,7 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
-using Uno.Framework;
 
-namespace Uno.Framework.Models
+namespace Uno.AspNetCore.Framework.Models
 {
     public class UserModel
 	{

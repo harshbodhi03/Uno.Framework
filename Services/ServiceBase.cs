@@ -1,6 +1,6 @@
-﻿using Uno.Framework.Database;
+﻿using Uno.AspNetCore.Framework.Database;
 
-namespace Uno.Framework.Services
+namespace Uno.AspNetCore.Framework.Services
 {
     public class ServiceBase<T>
 	{

@@ -1,4 +1,4 @@
-﻿namespace Uno.Framework.Data
+﻿namespace Uno.AspNetCore.Framework.Data
 {
 	public class RegisterResult : Result
 	{

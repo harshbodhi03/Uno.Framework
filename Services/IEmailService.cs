@@ -1,4 +1,4 @@
-﻿namespace Uno.Framework.Services
+﻿namespace Uno.AspNetCore.Framework.Services
 {
 	public interface IEmailService
 	{

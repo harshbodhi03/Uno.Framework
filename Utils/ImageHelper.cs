@@ -1,7 +1,7 @@
 ﻿using Microsoft.AspNetCore.Http;
 using System.IO;
 
-namespace Uno.Framework.Utils
+namespace Uno.AspNetCore.Framework.Utils
 {
 	public class ImageHelper
 	{

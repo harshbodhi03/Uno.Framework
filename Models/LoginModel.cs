@@ -1,7 +1,7 @@
 ﻿using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 
-namespace Uno.Framework.Models
+namespace Uno.AspNetCore.Framework.Models
 {
     public class LoginModel
 	{

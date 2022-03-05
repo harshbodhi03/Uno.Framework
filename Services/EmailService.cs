@@ -2,7 +2,7 @@
 using System.Net;
 using System.Net.Mail;
 
-namespace Uno.Framework.Services
+namespace Uno.AspNetCore.Framework.Services
 {
 	public class EmailService : IEmailService
 	{

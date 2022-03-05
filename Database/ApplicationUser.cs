@@ -1,6 +1,6 @@
 ﻿using Microsoft.AspNetCore.Identity;
 
-namespace Uno.Framework.Database
+namespace Uno.AspNetCore.Framework.Database
 {
 	public class ApplicationUser : IdentityUser
 	{

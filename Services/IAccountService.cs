@@ -1,11 +1,11 @@
 ﻿using System.Collections.Generic;
 using System.Security.Claims;
 using System.Threading.Tasks;
-using Uno.Framework.Database;
-using Uno.Framework.Data;
-using Uno.Framework.Models;
+using Uno.AspNetCore.Framework.Database;
+using Uno.AspNetCore.Framework.Data;
+using Uno.AspNetCore.Framework.Models;
 
-namespace Uno.Framework.Services
+namespace Uno.AspNetCore.Framework.Services
 {
     public interface IAccountService
 	{

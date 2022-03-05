@@ -1,7 +1,7 @@
 ﻿using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 
-namespace Uno.Framework.Database
+namespace Uno.AspNetCore.Framework.Database
 {
     public class BaseDbContext : IdentityDbContext<ApplicationUser>
     {

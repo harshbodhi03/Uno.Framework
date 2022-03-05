@@ -3,10 +3,10 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using System;
-using Uno.Framework.Database;
-using Uno.Framework.Services;
+using Uno.AspNetCore.Framework.Database;
+using Uno.AspNetCore.Framework.Services;
 
-namespace Uno.Framework
+namespace Uno.AspNetCore.Framework
 {
     public class StartupBase
     {

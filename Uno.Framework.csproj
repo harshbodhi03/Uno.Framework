@@ -2,6 +2,10 @@
 
   <PropertyGroup>
     <TargetFramework>net5.0</TargetFramework>
+    <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
+    <Description>Asp.net core basic infrastructure.</Description>
+    <PackageProjectUrl>https://unosoftwares.com</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/harshbodhi03/Uno.Framework</RepositoryUrl>
   </PropertyGroup>
 
   <ItemGroup>

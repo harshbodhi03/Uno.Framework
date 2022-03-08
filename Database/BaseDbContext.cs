@@ -3,14 +3,14 @@ using Microsoft.EntityFrameworkCore;
 
 namespace Uno.AspNetCore.Framework.Database
 {
-    public class BaseDbContext : IdentityDbContext<ApplicationUser>
-    {
-        public BaseDbContext(DbContextOptions<BaseDbContext> options) : base(options)
-        {
-        }
+    //public class BaseDbContext : IdentityDbContext<ApplicationUser>
+    //{
+    //    public BaseDbContext(DbContextOptions<BaseDbContext> options) : base(options)
+    //    {
+    //    }
 
-        protected BaseDbContext(DbContextOptions options) : base(options)
-        {
-        }
-    }
+    //    protected BaseDbContext(DbContextOptions options) : base(options)
+    //    {
+    //    }
+    //}
 }

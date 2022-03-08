@@ -18,10 +18,15 @@ namespace Uno.AspNetCore.Framework
 
         public IConfiguration Configuration { get; }
 
-        public void Initialize<T>(IServiceCollection services) where T : IdentityDbContext<ApplicationUser>
+        public void Initialize<T>(IServiceCollection services, string connectionString) where T : IdentityDbContext<ApplicationUser>
         {
             services.AddTransient<IEmailService, EmailService>();
             services.AddTransient<IAccountService, AccountService>();
+            services.AddDbContext<T>(options =>
+            {
+                options.UseSqlServer(Configuration.GetConnectionString(connectionString));
+            });
+
             services.AddIdentity<ApplicationUser, IdentityRole>().AddEntityFrameworkStores<T>().AddDefaultTokenProviders();
         }
     }

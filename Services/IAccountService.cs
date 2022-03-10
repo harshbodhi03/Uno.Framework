@@ -12,13 +12,13 @@ namespace Uno.AspNetCore.Framework.Services
     {
         IEnumerable<ApplicationUser> GetUsers();
         Task<RegisterResult> Register(RegisterModel model);
-        Task<Result> Verify(string userId, string code);
+        Task<Result> Verify(string id, string code);
         Task<Result> Login(LoginModel model);
-        Task<Result> UpdateUser(string userId, UserModel model);
-        Task<Result> SetUserMode(string userId, bool userMode);
+        Task<Result> UpdateUser(UserModel model);
+        Task<Result> SetUserMode(UserModeModel model);
         Task<bool> GetUserMode(ClaimsPrincipal userPrincipal);
-        Task<Result> SetUserRole(string userId, Roles newRole);
-        Task<Roles> GetUserRole(string userId);
+        Task<Result> SetUserRole(RoleModel model);
+        Task<Roles> GetUserRole(string id);
         Task<Result> DeleteUser(string id);
         Task<ApplicationUser> GetUser(string id);
         Task Logoff();

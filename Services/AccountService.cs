@@ -74,17 +74,17 @@ namespace Uno.AspNetCore.Framework.Services
             await _signInManager.SignOutAsync();
         }
 
-        public async Task<Result> UpdateUser(string userId, UserModel model)
+        public async Task<Result> UpdateUser(UserModel model)
         {
-            if (userId == null)
-                throw new ArgumentNullException(nameof(userId));
-
             if (model == null)
                 throw new ArgumentNullException(nameof(model));
 
+            if (model.Id == null)
+                throw new ArgumentNullException(nameof(model.Id));
+
             var verifyResult = new Result();
 
-            var user = await _userManager.FindByIdAsync(userId);
+            var user = await _userManager.FindByIdAsync(model.Id);
             if (user != null)
             {
                 user.FirstName = model.FirstName;
@@ -101,17 +101,20 @@ namespace Uno.AspNetCore.Framework.Services
             return verifyResult;
         }
 
-        public async Task<Result> SetUserMode(string userId, bool userMode)
+        public async Task<Result> SetUserMode(UserModeModel model)
         {
-            if (userId == null)
-                throw new ArgumentNullException(nameof(userId));
+            if (model == null)
+                throw new ArgumentNullException(nameof(model));
+
+            if (model.Id == null)
+                throw new ArgumentNullException(nameof(model.Id));
 
             var verifyResult = new Result();
 
-            var user = await _userManager.FindByIdAsync(userId);
+            var user = await _userManager.FindByIdAsync(model.Id);
             if (user != null)
             {
-                user.IsUserMode = userMode;
+                user.IsUserMode = model.IsInUserMode;
                 var result = await _userManager.UpdateAsync(user);
 
                 verifyResult.Succeeded = result.Succeeded;
@@ -122,14 +125,20 @@ namespace Uno.AspNetCore.Framework.Services
             return verifyResult;
         }
 
-        public async Task<Result> SetUserRole(string userId, Roles newRole)
+        public async Task<Result> SetUserRole(RoleModel model)
         {
-            if (userId == null)
-                throw new ArgumentNullException(nameof(userId));
+            if (model == null)
+                throw new ArgumentNullException(nameof(model));
+
+            if (model.Id == null)
+                throw new ArgumentNullException(nameof(model.Id));
+
+            if (Enum.IsDefined(typeof(Roles), model.Role) == false)
+                throw new InvalidOperationException($"{model.Role} is not a valid role");
 
             var verifyResult = new Result();
 
-            var user = await _userManager.FindByIdAsync(userId);
+            var user = await _userManager.FindByIdAsync(model.Id);
             if (user != null)
             {
                 var roles = await _userManager.GetRolesAsync(user);
@@ -138,7 +147,7 @@ namespace Uno.AspNetCore.Framework.Services
                     await _userManager.RemoveFromRoleAsync(user, role);
                 }
 
-                var result = await _userManager.AddToRoleAsync(user, newRole.ToString());
+                var result = await _userManager.AddToRoleAsync(user, model.Role);
                 verifyResult.Succeeded = result.Succeeded;
                 if (verifyResult.Succeeded == false)
                     verifyResult.Error = result.Errors.First().Description;

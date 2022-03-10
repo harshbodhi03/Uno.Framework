@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.2.32210.308
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Uno.AspNetCore.Framework", "Uno.AspNetCore.Framework.csproj", "{C1B95EC4-80B1-4038-A26D-CC91FFCC3B8A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Uno.AspNetCore.Framework", "AspNetCore\Uno.AspNetCore.Framework.csproj", "{98656507-33B3-4D83-A30B-4AB495F7E389}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,10 +11,10 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{C1B95EC4-80B1-4038-A26D-CC91FFCC3B8A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{C1B95EC4-80B1-4038-A26D-CC91FFCC3B8A}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{C1B95EC4-80B1-4038-A26D-CC91FFCC3B8A}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{C1B95EC4-80B1-4038-A26D-CC91FFCC3B8A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{98656507-33B3-4D83-A30B-4AB495F7E389}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{98656507-33B3-4D83-A30B-4AB495F7E389}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{98656507-33B3-4D83-A30B-4AB495F7E389}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{98656507-33B3-4D83-A30B-4AB495F7E389}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

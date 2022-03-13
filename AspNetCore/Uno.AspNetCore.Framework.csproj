@@ -8,8 +8,8 @@
 		<RepositoryUrl>https://github.com/harshbodhi03/Uno.Framework</RepositoryUrl>
 		<Company>Uno software and solutions</Company>
 		<Authors>Uno software and solutions</Authors>
-		<PackageVersion>5.0.6</PackageVersion>
-		<Version>5.0.6</Version>
+		<PackageVersion>5.0.7</PackageVersion>
+		<Version>5.0.7</Version>
 	</PropertyGroup>
 
 	<ItemGroup>

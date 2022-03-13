@@ -20,7 +20,7 @@
 	  <None Remove="nuget.config" />
 	</ItemGroup>
 	<ItemGroup>
-		<None Include="Licenses\LICENSE.txt" Pack="true" PackagePath="LICENSE.txt"/>
+		<None Include="Licenses\LICENSE.txt" Pack="true" PackagePath="LICENSE.txt" />
 	</ItemGroup>
 	<ItemGroup>
 		<PackageReference Include="Microsoft.AspNetCore.Identity" Version="2.2.0" />

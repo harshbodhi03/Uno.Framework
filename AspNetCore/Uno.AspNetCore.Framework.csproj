@@ -8,8 +8,8 @@
 		<RepositoryUrl>https://github.com/harshbodhi03/Uno.Framework</RepositoryUrl>
 		<Company>Uno software and solutions</Company>
 		<Authors>Uno software and solutions</Authors>
-		<PackageVersion>5.0.2</PackageVersion>
-		<Version>5.0.2</Version>
+		<PackageVersion>5.0.4</PackageVersion>
+		<Version>5.0.4</Version>
 		<AssemblyName>UnoSoftware.AspNetCore.Framework</AssemblyName>
 		<PackageLicenseFile>LICENSE.txt</PackageLicenseFile>
 		<Copyright>2021 Uno software and solutions</Copyright>

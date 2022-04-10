@@ -11,10 +11,16 @@ namespace Uno.AspNetCore.Framework.Services
         private string mHostAddress;
         public EmailService(IConfiguration configuration)
         {
-            mAdminAddress = configuration["Moderator:EmailConfig:Email"];
-            mPassword = configuration["Moderator:EmailConfig:Password"];
-            mHostAddress = configuration["Moderator:EmailConfig:Host"];
+            mAdminAddress = configuration["Moderator:EmailSettings:Email"];
+            mPassword = configuration["Moderator:EmailSettings:Password"];
+            mHostAddress = configuration["Moderator:EmailSettings:Host"];
         }
+
+        public void Send(string subject, string body)
+        {
+            Send(mAdminAddress, subject, body);
+        }
+
         public void Send(string toAddress, string subject, string body)
         {
             MailMessage message = new MailMessage();

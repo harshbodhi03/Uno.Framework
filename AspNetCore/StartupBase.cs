@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
+using Microsoft.AspNetCore.Routing;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -20,12 +21,19 @@ namespace Uno.AspNetCore.Framework
 
         public void Initialize<T>(IServiceCollection services, string connectionString) where T : IdentityDbContext<ApplicationUser>
         {
+            services.Configure<RouteOptions>(options => options.LowercaseUrls = true);
+
+            services.AddTransient<IContextSeedService, ContextSeedService>();
             services.AddTransient<IEmailService, EmailService>();
             services.AddTransient<IAccountService, AccountService>();
-            services.AddDbContext<T>(options =>
+
+            if (string.IsNullOrWhiteSpace(Configuration.GetConnectionString(connectionString)) == false)
             {
-                options.UseSqlServer(Configuration.GetConnectionString(connectionString));
-            });
+                services.AddDbContext<T>(options =>
+                {
+                    options.UseSqlServer(Configuration.GetConnectionString(connectionString));
+                });
+            }
 
             services.AddIdentity<ApplicationUser, IdentityRole>().AddEntityFrameworkStores<T>().AddDefaultTokenProviders();
         }

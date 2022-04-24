@@ -8,7 +8,7 @@ using Uno.AspNetCore.Framework.Models;
 
 namespace Uno.AspNetCore.Framework.Services
 {
-    public interface IAccountService
+	public interface IAccountService
     {
         IEnumerable<ApplicationUser> GetUsers();
         Task<RegisterResult> Register(RegisterModel model);

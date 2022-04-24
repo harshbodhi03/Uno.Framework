@@ -8,8 +8,8 @@
 		<RepositoryUrl>https://github.com/harshbodhi03/Uno.Framework</RepositoryUrl>
 		<Company>Uno software and solutions</Company>
 		<Authors>Uno software and solutions</Authors>
-		<PackageVersion>5.0.4</PackageVersion>
-		<Version>5.0.4</Version>
+		<PackageVersion>5.0.7</PackageVersion>
+		<Version>5.0.7</Version>
 		<AssemblyName>UnoSoftware.AspNetCore.Framework</AssemblyName>
 		<PackageLicenseFile>LICENSE.txt</PackageLicenseFile>
 		<Copyright>2021 Uno software and solutions</Copyright>
@@ -25,6 +25,7 @@
 	<ItemGroup>
 		<PackageReference Include="Microsoft.AspNetCore.Identity" Version="2.2.0" />
 		<PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="5.0.13" />
+		<PackageReference Include="Microsoft.AspNetCore.Routing" Version="2.2.2" />
 		<PackageReference Include="Microsoft.AspNetCore.Session" Version="2.2.0" />
 		<PackageReference Include="Microsoft.EntityFrameworkCore" Version="5.0.13" />
 		<PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="5.0.13" />

@@ -11,7 +11,7 @@ using Uno.AspNetCore.Framework.Models;
 
 namespace Uno.AspNetCore.Framework.Services
 {
-    public class AccountService : IAccountService
+	public class AccountService : IAccountService
     {
         private readonly UserManager<ApplicationUser> _userManager;
         private readonly SignInManager<ApplicationUser> _signInManager;

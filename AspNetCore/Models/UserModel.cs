@@ -2,7 +2,7 @@
 
 namespace Uno.AspNetCore.Framework.Models
 {
-    public class UserModel
+	public class UserModel
 	{
 		public string Id { get; set; }
 
@@ -20,9 +20,9 @@ namespace Uno.AspNetCore.Framework.Models
 		public string Role { get; set; }
 
 		public string[] Roles { get; set; }= {
-			Framework.Roles.Basic.ToString(),
-			Framework.Roles.Administrator.ToString(),
-			Framework.Roles.Moderator.ToString()
+			Services.Roles.Basic.ToString(),
+			Services.Roles.Administrator.ToString(),
+			Services.Roles.Moderator.ToString()
 		};
 
 		public byte[] ProfilePicture { get; set; }

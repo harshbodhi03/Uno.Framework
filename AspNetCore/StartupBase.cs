@@ -10,32 +10,32 @@ using Uno.AspNetCore.Framework.Services;
 
 namespace Uno.AspNetCore.Framework
 {
-    public class StartupBase
-    {
-        public StartupBase(IConfiguration configuration)
-        {
-            Configuration = configuration;
-        }
+	public class StartupBase
+	{
+		public StartupBase(IConfiguration configuration)
+		{
+			Configuration = configuration;
+		}
 
-        public IConfiguration Configuration { get; }
+		public IConfiguration Configuration { get; }
 
-        public void Initialize<T>(IServiceCollection services, string connectionString) where T : IdentityDbContext<ApplicationUser>
-        {
-            services.Configure<RouteOptions>(options => options.LowercaseUrls = true);
+		public void Initialize<T>(IServiceCollection services, string connectionString) where T : IdentityDbContext<ApplicationUser>
+		{
+			services.Configure<RouteOptions>(options => options.LowercaseUrls = true);
 
-            services.AddTransient<IContextSeedService, ContextSeedService>();
-            services.AddTransient<IEmailService, EmailService>();
-            services.AddTransient<IAccountService, AccountService>();
+			services.AddSingleton<IContextSeedService, ContextSeedService>();
+			services.AddTransient<IEmailService, EmailService>();
+			services.AddTransient<IAccountService, AccountService>();
 
-            if (string.IsNullOrWhiteSpace(Configuration.GetConnectionString(connectionString)) == false)
-            {
-                services.AddDbContext<T>(options =>
-                {
-                    options.UseSqlServer(Configuration.GetConnectionString(connectionString));
-                });
-            }
+			services.AddDbContext<T>(options =>
+			{
+				if (string.IsNullOrWhiteSpace(Configuration.GetConnectionString(connectionString)) == false)
+				{
+					options.UseSqlServer(Configuration.GetConnectionString(connectionString));
+				}
+			});
 
-            services.AddIdentity<ApplicationUser, IdentityRole>().AddEntityFrameworkStores<T>().AddDefaultTokenProviders();
-        }
-    }
+			services.AddIdentity<ApplicationUser, IdentityRole>().AddEntityFrameworkStores<T>().AddDefaultTokenProviders();
+		}
+	}
 }

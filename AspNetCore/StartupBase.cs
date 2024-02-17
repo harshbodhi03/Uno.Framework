@@ -26,6 +26,7 @@ namespace Uno.AspNetCore.Framework
 			services.AddSingleton<IContextSeedService, ContextSeedService>();
 			services.AddTransient<IEmailService, EmailService>();
 			services.AddTransient<IAccountService, AccountService>();
+			services.AddTransient<IFileSelectorService, FileSelectorService>();
 
 			services.AddDbContext<T>(options =>
 			{
